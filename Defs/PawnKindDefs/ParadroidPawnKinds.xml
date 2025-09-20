@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Base Paradroid PawnKind -->
+  <PawnKindDef Name="ParadroidDroidKindBase" Abstract="true">
+    <combatPower>150</combatPower>
+    <canArriveManhunter>false</canArriveManhunter>
+    <canBeSapper>false</canBeSapper>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>CutoutComplex</shaderType>
+          <drawSize>1.5</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
+    <backstoryCategories>
+      <li>ParadroidNeuralDroid</li>
+    </backstoryCategories>
+    <defaultFactionType>ParadroidNeuralNetwork</defaultFactionType>
+  </PawnKindDef>
+
+  <!-- 001 Neural Interface Droid (Good Faction) -->
+  <PawnKindDef ParentName="ParadroidDroidKindBase">
+    <defName>ParadroidDroid001_Neural</defName>
+    <label>001 neural interface droid</label>
+    <race>ParadroidDroidNeural</race>
+    <combatPower>120</combatPower>
+    <canBeSapper>false</canBeSapper>
+    <backstoryCategories>
+      <li>ParadroidNeuralDroid</li>
+    </backstoryCategories>
+    <defaultFactionType>ParadroidNeuralNetwork</defaultFactionType>
+    <apparelMoney>0</apparelMoney>
+    <weaponMoney>0</weaponMoney>
+    <trader>false</trader>
+    <initialResistanceRange>10~20</initialResistanceRange>
+    <initialWillRange>1~3</initialWillRange>
+  </PawnKindDef>
+
+  <!-- 139 Utility Droid (Neutral Faction) -->
+  <PawnKindDef ParentName="ParadroidDroidKindBase">
+    <defName>ParadroidDroid139_Utility</defName>
+    <label>139 utility droid</label>
+    <race>ParadroidDroidUtility</race>
+    <combatPower>80</combatPower>
+    <canBeSapper>false</canBeSapper>
+    <backstoryCategories>
+      <li>ParadroidNeutralDroid</li>
+    </backstoryCategories>
+    <defaultFactionType>NeutralAutomatons</defaultFactionType>
+    <apparelMoney>0</apparelMoney>
+    <weaponMoney>0</weaponMoney>
+    <trader>false</trader>
+    <initialResistanceRange>15~25</initialResistanceRange>
+    <initialWillRange>2~4</initialWillRange>
+  </PawnKindDef>
+
+  <!-- 139 Utility Droid (Corrupted Version) -->
+  <PawnKindDef ParentName="ParadroidDroidKindBase">
+    <defName>ParadroidDroid139_Corrupted</defName>
+    <label>139 corrupted utility droid</label>
+    <race>ParadroidDroidUtility</race>
+    <combatPower>100</combatPower>
+    <canBeSapper>true</canBeSapper>
+    <backstoryCategories>
+      <li>ParadroidCorruptedDroid</li>
+    </backstoryCategories>
+    <defaultFactionType>CorruptedSystems</defaultFactionType>
+    <apparelMoney>0</apparelMoney>
+    <weaponMoney>0</weaponMoney>
+    <weaponTags>
+      <li>MechanoidGunMedium</li>
+    </weaponTags>
+    <trader>false</trader>
+    <initialResistanceRange>20~30</initialResistanceRange>
+    <initialWillRange>3~5</initialWillRange>
+  </PawnKindDef>
+
+</Defs>

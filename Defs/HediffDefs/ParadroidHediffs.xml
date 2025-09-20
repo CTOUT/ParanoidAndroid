@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <HediffDef ParentName="AddedBodyPartBase">
+    <defName>ParadroidNeuralInterfaceHediff</defName>
+    <label>paradroid neural interface</label>
+    <description>An installed paradroid neural interface that enables robot hacking capabilities.</description>
+    <descriptionHyperlinks>
+      <ThingDef>ParadroidNeuralInterface</ThingDef>
+    </descriptionHyperlinks>
+    <addedPartProps>
+      <solid>true</solid>
+      <partEfficiency>1.0</partEfficiency>
+    </addedPartProps>
+    <stages>
+      <li>
+        <statOffsets>
+          <ResearchSpeed>0.10</ResearchSpeed>
+        </statOffsets>
+        <capMods>
+          <li>
+            <capacity>Consciousness</capacity>
+            <offset>0.05</offset>
+          </li>
+        </capMods>
+      </li>
+    </stages>
+    <spawnThingOnRemoved>ParadroidNeuralInterface</spawnThingOnRemoved>
+  </HediffDef>
+
+</Defs>

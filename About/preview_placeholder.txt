@@ -1,0 +1,7 @@
+Placeholder for Preview.png (512x512)
+Create a preview image showing:
+- Robotic/mechanoid theme
+- Paradroid aesthetic
+- RimWorld style art
+
+Also create ModIcon.png (64x64) with similar theme.

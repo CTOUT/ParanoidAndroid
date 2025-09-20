@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Base Paradroid Droid Race -->
+  <ThingDef ParentName="BasePawn" Name="ParadroidDroidBase" Abstract="true">
+    <label>paradroid droid</label>
+    <description>An artificial intelligence housed in a sophisticated robotic chassis, originating from the ancient Paradroid systems.</description>
+    <category>Pawn</category>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <ComfyTemperatureMin>-100</ComfyTemperatureMin>
+      <ComfyTemperatureMax>250</ComfyTemperatureMax>
+      <LeatherAmount>0</LeatherAmount>
+      <MeatAmount>0</MeatAmount>
+      <Mass>70</Mass>
+      <MoveSpeed>4.6</MoveSpeed>
+      <MarketValue>2500</MarketValue>
+      <ArmorRating_Blunt>0.20</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.20</ArmorRating_Sharp>
+      <PsychicSensitivity>0</PsychicSensitivity>
+      <ToxicResistance>1</ToxicResistance>
+      <ImmunityGainSpeed>0</ImmunityGainSpeed>
+    </statBases>
+    <tools>
+      <li>
+        <label>manipulator</label>
+        <capacities>
+          <li>Blunt</li>
+        </capacities>
+        <power>8</power>
+        <cooldownTime>2</cooldownTime>
+      <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <surpriseAttack>
+          <extraMeleeDamages>
+            <li>
+              <def>Stun</def>
+              <amount>14</amount>
+            </li>
+          </extraMeleeDamages>
+        </surpriseAttack>
+      </li>
+    </tools>
+    <race>
+      <thinkTreeMain>Animal</thinkTreeMain>
+      <thinkTreeConstant>AnimalConstant</thinkTreeConstant>
+      <intelligence>ToolUser</intelligence>
+      <makesFootprints>true</makesFootprints>
+      <lifeExpectancy>9999</lifeExpectancy>
+      <leatherDef>Steel</leatherDef>
+      <bloodDef>Filth_MachineBits</bloodDef>
+      <meatLabel>scrap metal</meatLabel>
+      <fleshType>Mechanoid</fleshType>
+      <needsRest>false</needsRest>
+      <hasGenders>false</hasGenders>
+      <foodType>None</foodType>
+      <gestationPeriodDays>0</gestationPeriodDays>
+      <manhunterOnDamageChance>0.05</manhunterOnDamageChance>
+      <manhunterOnTameFailChance>0</manhunterOnTameFailChance>
+      <litterSizeCurve>
+        <points>
+          <li>(0.5, 0)</li>
+          <li>(1, 1)</li>
+          <li>(1.01, 0.02)</li>
+          <li>(3.5, 0)</li>
+        </points>
+      </litterSizeCurve>
+      <lifeStageAges>
+        <li>
+          <def>MechanoidFullyFormed</def>
+          <minAge>0</minAge>
+          <soundWounded>Pawn_Mech_Centipede_Wounded</soundWounded>
+          <soundDeath>Pawn_Mech_Centipede_Death</soundDeath>
+          <soundCall>Pawn_Mech_Scyther_Call</soundCall>
+        </li>
+      </lifeStageAges>
+      <soundMeleeHitPawn>Pawn_Melee_MechanoidBash_HitPawn</soundMeleeHitPawn>
+      <soundMeleeHitBuilding>Pawn_Melee_MechanoidBash_HitBuilding</soundMeleeHitBuilding>
+      <soundMeleeMiss>Pawn_Melee_MechanoidBash_Miss</soundMeleeMiss>
+      <specialShadowData>
+        <volume>(0.3, 0.8, 0.3)</volume>
+        <offset>(0,0,-0.3)</offset>
+      </specialShadowData>
+    </race>
+    <butcherProducts>
+      <Steel>20</Steel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </butcherProducts>
+  </ThingDef>
+
+  <!-- 001 Neural Interface Droid -->
+  <ThingDef ParentName="ParadroidDroidBase">
+    <defName>ParadroidDroidNeural</defName>
+    <label>001 neural interface droid</label>
+    <description>A highly sophisticated neural interface droid from the Paradroid system. Unit 001 is designed for diplomatic and communication functions, serving as a bridge between artificial and organic intelligence systems.</description>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <MoveSpeed>5.2</MoveSpeed>
+      <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+      <ResearchSpeed>1.5</ResearchSpeed>
+      <MarketValue>3500</MarketValue>
+      <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+    </statBases>
+    <race>
+      <body>Human</body>
+      <baseHealthScale>0.8</baseHealthScale>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHungerRate>0</baseHungerRate>
+      <nameGenerator>NamerParadroidDroidNeural</nameGenerator>
+    </race>
+  </ThingDef>
+
+  <!-- 139 Utility Droid -->
+  <ThingDef ParentName="ParadroidDroidBase">
+    <defName>ParadroidDroidUtility</defName>
+    <label>139 utility droid</label>
+    <description>A basic maintenance and utility droid from the Paradroid system. Unit 139 is designed for general labor tasks, cleaning, and simple repairs.</description>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <MoveSpeed>4.0</MoveSpeed>
+      <WorkSpeedGlobal>0.9</WorkSpeedGlobal>
+      <CarryingCapacity>100</CarryingCapacity>
+      <MarketValue>2000</MarketValue>
+      <ArmorRating_Blunt>0.25</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.25</ArmorRating_Sharp>
+    </statBases>
+    <race>
+      <body>Human</body>
+      <baseHealthScale>1.2</baseHealthScale>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHungerRate>0</baseHungerRate>
+      <nameGenerator>NamerParadroidDroidUtility</nameGenerator>
+    </race>
+  </ThingDef>
+
+</Defs>

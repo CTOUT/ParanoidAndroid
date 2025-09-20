@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>ParanoidAndroid</name>
+    <author>Chris</author>
+    <packageId>Chris.ParanoidAndroid</packageId>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <modDependencies>
+    </modDependencies>
+    <loadAfter>
+    </loadAfter>
+    <description>A RimWorld mod inspired by the classic game Paradroid. Take control of robotic entities through hacking and tactical manipulation.
+
+Features:
+- Hackable robots and mechanoids
+- Neural interface devices
+- Robot control mechanics
+- Paradroid-style gameplay mechanics
+
+This mod brings the strategic robot takeover mechanics from Paradroid into the RimWorld universe.</description>
+    <url></url>
+</ModMetaData>

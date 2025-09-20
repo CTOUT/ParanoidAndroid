@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Neural Interface Droid Backstories -->
+  <BackstoryDef>
+    <defName>ParadroidNeuralDroid001</defName>
+    <title>neural interface unit</title>
+    <titleShort>neural interface</titleShort>
+    <description>This droid was manufactured as part of the advanced Paradroid neural network system. Designed to facilitate communication between artificial and organic intelligence, it possesses sophisticated social protocols and learning algorithms.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>ParadroidNeuralDroid</li>
+    </spawnCategories>
+    <skillGains>
+      <Intellectual>8</Intellectual>
+      <Social>6</Social>
+      <Medicine>4</Medicine>
+    </skillGains>
+    <workDisables>
+      <li>ManualDumb</li>
+      <li>Violent</li>
+    </workDisables>
+  </BackstoryDef>
+
+  <!-- Neutral Utility Droid Backstories -->
+  <BackstoryDef>
+    <defName>ParadroidNeutralDroid139</defName>
+    <title>utility maintenance unit</title>
+    <titleShort>utility unit</titleShort>
+    <description>A standard utility droid designed for maintenance, construction, and general labor tasks. This unit operates under its original programming directives, focused on efficiency and task completion.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>ParadroidNeutralDroid</li>
+    </spawnCategories>
+    <skillGains>
+      <Construction>6</Construction>
+      <Crafting>5</Crafting>
+      <Mining>4</Mining>
+      <Plants>3</Plants>
+    </skillGains>
+    <workDisables>
+      <li>Social</li>
+      <li>Artistic</li>
+    </workDisables>
+  </BackstoryDef>
+
+  <!-- Corrupted Droid Backstories -->
+  <BackstoryDef>
+    <defName>ParadroidCorruptedDroid139</defName>
+    <title>corrupted warfare unit</title>
+    <titleShort>corrupted unit</titleShort>
+    <description>This droid's original programming has been overwritten by malicious code. Once a peaceful utility unit, it now views organic life as a threat to be eliminated or upgraded through force.</description>
+    <slot>Childhood</slot>
+    <spawnCategories>
+      <li>ParadroidCorruptedDroid</li>
+    </spawnCategories>
+    <skillGains>
+      <Shooting>7</Shooting>
+      <Melee>6</Melee>
+      <Construction>3</Construction>
+      <Crafting>2</Crafting>
+    </skillGains>
+    <workDisables>
+      <li>Social</li>
+      <li>Caring</li>
+      <li>Artistic</li>
+      <li>Animals</li>
+    </workDisables>
+  </BackstoryDef>
+
+  <!-- Adult backstories for variety -->
+  <BackstoryDef>
+    <defName>ParadroidNeuralDroidExperienced</defName>
+    <title>experienced neural interface</title>
+    <titleShort>experienced interface</titleShort>
+    <description>Through countless interactions with various species and cultures, this neural interface droid has developed advanced understanding of biological psychology and social dynamics.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>ParadroidNeuralDroid</li>
+    </spawnCategories>
+    <skillGains>
+      <Intellectual>6</Intellectual>
+      <Social>8</Social>
+      <Medicine>6</Medicine>
+      <Intellectual>4</Intellectual>
+    </skillGains>
+    <workDisables>
+      <li>ManualDumb</li>
+    </workDisables>
+  </BackstoryDef>
+
+  <BackstoryDef>
+    <defName>ParadroidNeutralDroidVeteran</defName>
+    <title>veteran maintenance unit</title>
+    <titleShort>veteran unit</titleShort>
+    <description>Decades of maintenance work have optimized this droid's efficiency protocols. It has become an expert at resource management and infrastructure maintenance.</description>
+    <slot>Adulthood</slot>
+    <spawnCategories>
+      <li>ParadroidNeutralDroid</li>
+    </spawnCategories>
+    <skillGains>
+      <Construction>8</Construction>
+      <Crafting>7</Crafting>
+      <Mining>6</Mining>
+      <Plants>4</Plants>
+    </skillGains>
+    <workDisables>
+      <li>Social</li>
+      <li>Artistic</li>
+      <li>Animals</li>
+    </workDisables>
+  </BackstoryDef>
+
+</Defs>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>ParadroidTechnology</defName>
+    <label>Paradroid technology</label>
+    <description>Study ancient robotic control systems to develop neural interface technology capable of hacking and controlling mechanoids.</description>
+    <baseCost>2500</baseCost>
+    <techLevel>Spacer</techLevel>
+    <prerequisites>
+      <li>Fabrication</li>
+      <li>BrainWiring</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>16.00</researchViewX>
+    <researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>AdvancedParadroidSystems</defName>
+    <label>advanced paradroid systems</label>
+    <description>Develop more sophisticated robot control protocols, allowing for permanent takeover and enhanced control capabilities.</description>
+    <baseCost>4000</baseCost>
+    <techLevel>Ultra</techLevel>
+    <prerequisites>
+      <li>ParadroidTechnology</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <researchViewX>17.00</researchViewX>
+    <researchViewY>4.50</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>

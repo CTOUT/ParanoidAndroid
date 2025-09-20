@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <JobDef>
+    <defName>HackRobot</defName>
+    <driverClass>JobDriver_AttackMelee</driverClass>
+    <label>hack robot</label>
+    <reportString>hacking TargetA.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+    <alwaysShowWeapon>false</alwaysShowWeapon>
+    <suspendable>false</suspendable>
+  </JobDef>
+
+  <JobDef>
+    <defName>ControlRobot</defName>
+    <driverClass>JobDriver_Wait</driverClass>
+    <label>control robot</label>
+    <reportString>controlling robot.</reportString>
+    <casualInterruptible>true</casualInterruptible>
+    <suspendable>false</suspendable>
+  </JobDef>
+
+</Defs>

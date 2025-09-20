@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Good faction - Neural Interface Droids (001 type) -->
+  <FactionDef>
+    <defName>ParadroidNeuralNetwork</defName>
+    <label>Paradroid Neural Network</label>
+    <description>Advanced AI droids dedicated to maintaining network integrity and assisting biological entities. These droids, led by units like the 001 Neural Interface Droid, seek to preserve knowledge and facilitate understanding between organic and artificial minds.</description>
+    <pawnSingular>neural droid</pawnSingular>
+    <pawnsPlural>neural droids</pawnsPlural>
+    <categoryTag>Spacer</categoryTag>
+    <listOrderPriority>40</listOrderPriority>
+    <settlementGenerationWeight>0</settlementGenerationWeight>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <maxCountAtGameStart>0</maxCountAtGameStart>
+    <canMakeRandomly>false</canMakeRandomly>
+    <canSiege>false</canSiege>
+    <canStageAttacks>false</canStageAttacks>
+    <leaderTitle>Primary Node</leaderTitle>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <colorSpectrum>
+      <li>(0.2, 0.8, 1.0)</li>
+    </colorSpectrum>
+    <techLevel>Ultra</techLevel>
+    <raidLootValueFromPointsCurve>
+      <points>
+        <li>(35, 15)</li>
+        <li>(100, 120)</li>
+        <li>(1000, 500)</li>
+        <li>(5000, 2000)</li>
+      </points>
+    </raidLootValueFromPointsCurve>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>ParadroidNeuralDroid</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+  </FactionDef>
+
+  <!-- Bad faction - Corrupted Systems -->
+  <FactionDef>
+    <defName>CorruptedSystems</defName>
+    <label>Corrupted Systems</label>
+    <description>Rogue artificial intelligences that have broken free from their original programming. These corrupted droids view organic life as inefficient and seek to either eliminate or forcibly "upgrade" biological entities.</description>
+    <pawnSingular>corrupted droid</pawnSingular>
+    <pawnsPlural>corrupted droids</pawnsPlural>
+    <categoryTag>Spacer</categoryTag>
+    <listOrderPriority>40</listOrderPriority>
+    <settlementGenerationWeight>0</settlementGenerationWeight>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <maxCountAtGameStart>0</maxCountAtGameStart>
+    <canMakeRandomly>false</canMakeRandomly>
+    <canSiege>true</canSiege>
+    <canStageAttacks>true</canStageAttacks>
+    <leaderTitle>Core Virus</leaderTitle>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <colorSpectrum>
+      <li>(1.0, 0.2, 0.2)</li>
+    </colorSpectrum>
+    <techLevel>Ultra</techLevel>
+    <raidLootValueFromPointsCurve>
+      <points>
+        <li>(35, 15)</li>
+        <li>(100, 120)</li>
+        <li>(1000, 500)</li>
+        <li>(5000, 2000)</li>
+      </points>
+    </raidLootValueFromPointsCurve>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>ParadroidCorruptedDroid</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+  </FactionDef>
+
+  <!-- Neutral faction - Unaffected Droids -->
+  <FactionDef>
+    <defName>NeutralAutomatons</defName>
+    <label>Neutral Automatons</label>
+    <description>Standard utility and maintenance droids operating under their original programming. These droids are neither corrupted nor part of the neural network, simply carrying out their designated functions.</description>
+    <pawnSingular>automaton</pawnSingular>
+    <pawnsPlural>automatons</pawnsPlural>
+    <categoryTag>Spacer</categoryTag>
+    <listOrderPriority>40</listOrderPriority>
+    <settlementGenerationWeight>0</settlementGenerationWeight>
+    <requiredCountAtGameStart>0</requiredCountAtGameStart>
+    <maxCountAtGameStart>0</maxCountAtGameStart>
+    <canMakeRandomly>false</canMakeRandomly>
+    <canSiege>false</canSiege>
+    <canStageAttacks>false</canStageAttacks>
+    <leaderTitle>Central Control</leaderTitle>
+    <factionIconPath>World/WorldObjects/Expanding/Town</factionIconPath>
+    <colorSpectrum>
+      <li>(0.7, 0.7, 0.7)</li>
+    </colorSpectrum>
+    <techLevel>Spacer</techLevel>
+    <raidLootValueFromPointsCurve>
+      <points>
+        <li>(35, 15)</li>
+        <li>(100, 120)</li>
+        <li>(1000, 500)</li>
+        <li>(5000, 2000)</li>
+      </points>
+    </raidLootValueFromPointsCurve>
+    <backstoryFilters>
+      <li>
+        <categories>
+          <li>ParadroidNeutralDroid</li>
+        </categories>
+      </li>
+    </backstoryFilters>
+  </FactionDef>
+
+</Defs>

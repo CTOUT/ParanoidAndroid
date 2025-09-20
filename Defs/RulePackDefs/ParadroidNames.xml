@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RulePackDef>
+    <defName>NamerParadroidDroidNeural</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>name->[droidnumber] Neural Interface Unit</li>
+        <li>name->[droidnumber] Interface Droid</li>
+        <li>name->[droidnumber] Communication Unit</li>
+        <li>name->[droidnumber] Neural Link</li>
+        <li>name->[droidnumber] Interface Protocol</li>
+        <li>droidnumber->001</li>
+        <li>droidnumber->002</li>
+        <li>droidnumber->003</li>
+        <li>droidnumber->004</li>
+        <li>droidnumber->005</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+  <RulePackDef>
+    <defName>NamerParadroidDroidUtility</defName>
+    <rulePack>
+      <rulesStrings>
+        <li>name->[droidnumber] Utility Unit</li>
+        <li>name->[droidnumber] Worker Droid</li>
+        <li>name->[droidnumber] Maintenance Unit</li>
+        <li>name->[droidnumber] Service Droid</li>
+        <li>name->[droidnumber] Labor Unit</li>
+        <li>droidnumber->139</li>
+        <li>droidnumber->140</li>
+        <li>droidnumber->141</li>
+        <li>droidnumber->142</li>
+        <li>droidnumber->143</li>
+        <li>droidnumber->144</li>
+        <li>droidnumber->145</li>
+      </rulesStrings>
+    </rulePack>
+  </RulePackDef>
+
+</Defs>

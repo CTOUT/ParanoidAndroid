@@ -1,0 +1,39 @@
+# RimWorld Mod .gitignore
+
+# Visual Studio / MonoDevelop files
+*.user
+*.suo
+*.sln.cache
+*.pidb
+*.userprefs
+.vs/
+bin/
+obj/
+
+# Temporary files
+*.tmp
+*.temp
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# RimWorld specific
+*.orig
+
+# Asset creation files (keep final assets, ignore working files)
+*.psd
+*.ai
+*.sketch
+*.xcf
+
+# Backup files
+*.bak
+*.backup

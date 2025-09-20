@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <RecipeDef>
+    <defName>InstallParadroidNeuralInterface</defName>
+    <label>install paradroid neural interface</label>
+    <description>Install a paradroid neural interface.</description>
+    <workerClass>Recipe_InstallArtificialBodyPart</workerClass>
+    <jobString>Installing paradroid neural interface.</jobString>
+    <workAmount>2500</workAmount>
+    <skillRequirements>
+      <Medicine>8</Medicine>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>ParadroidNeuralInterface</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>ParadroidNeuralInterface</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <appliedOnFixedBodyParts>
+      <li>Brain</li>
+    </appliedOnFixedBodyParts>
+    <addsHediff>ParadroidNeuralInterfaceHediff</addsHediff>
+    <surgerySuccessChanceFactor>0.95</surgerySuccessChanceFactor>
+    <deathOnFailedSurgeryChance>0.05</deathOnFailedSurgeryChance>
+    <researchPrerequisite>ParadroidTechnology</researchPrerequisite>
+  </RecipeDef>
+
+</Defs>

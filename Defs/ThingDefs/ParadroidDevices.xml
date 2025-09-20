@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef ParentName="BodyPartBase">
+    <defName>ParadroidNeuralInterface</defName>
+    <label>paradroid neural interface</label>
+    <description>A sophisticated cybernetic implant that allows direct neural interface with robotic systems. Based on ancient Paradroid technology, this device enables the user to hack into and temporarily control mechanoids and robots.</description>
+    <descriptionHyperlinks><RecipeDef>InstallParadroidNeuralInterface</RecipeDef></descriptionHyperlinks>
+    <costList>
+      <Steel>25</Steel>
+      <ComponentIndustrial>3</ComponentIndustrial>
+      <Gold>5</Gold>
+    </costList>
+    <statBases>
+      <Mass>0.3</Mass>
+      <Flammability>0.7</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
+      <Beauty>-4</Beauty>
+      <WorkToMake>15000</WorkToMake>
+      <MarketValue>800</MarketValue>
+    </statBases>
+    <techLevel>Spacer</techLevel>
+    <recipeMaker>
+      <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <unfinishedThingDef>UnfinishedHealthItemBionic</unfinishedThingDef>
+      <skillRequirements>
+        <Crafting>8</Crafting>
+      </skillRequirements>
+      <researchPrerequisite>ParadroidTechnology</researchPrerequisite>
+      <recipeUsers>
+        <li>FabricationBench</li>
+      </recipeUsers>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="ResourceBase">
+    <defName>ParadroidDataCore</defName>
+    <label>paradroid data core</label>
+    <description>A mysterious data storage device containing fragments of ancient Paradroid programming protocols. Essential for developing robot control technology.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/ComponentIndustrial</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <soundInteract>Standard_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>75</stackLimit>
+    <healthAffectsPrice>false</healthAffectsPrice>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>45</MarketValue>
+      <Mass>0.6</Mass>
+      <Flammability>0.6</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
+    </statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>ResourcesRaw</li>
+    </thingCategories>
+  </ThingDef>
+
+</Defs>
