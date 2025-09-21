@@ -1,0 +1,15 @@
+<!--
+  Service Droid (300–399)
+  Medical, repair, logistics droids.
+  Duplicate and customize for each specific droid as needed.
+-->
+<ThingDefs>
+  <ThingDef ParentName="MechanoidBase">
+    <defName>Paradroid_ServiceDroid_300</defName>
+    <label>service droid</label>
+    <description>Provides medical, repair, and logistics support.</description>
+    <!-- TODO: Set work tags, body, health, and skills -->
+    <!-- TODO: Assign custom graphic path -->
+    <!-- TODO: Set tradeability and other properties as needed -->
+  </ThingDef>
+</ThingDefs>

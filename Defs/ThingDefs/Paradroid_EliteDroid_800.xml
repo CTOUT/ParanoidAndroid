@@ -1,0 +1,15 @@
+<!--
+  Elite Droid (800–899)
+  Bosses, rare types, high difficulty.
+  Duplicate and customize for each specific droid as needed.
+-->
+<ThingDefs>
+  <ThingDef ParentName="MechanoidBase">
+    <defName>Paradroid_EliteDroid_800</defName>
+    <label>elite droid</label>
+    <description>Elite droid: rare, powerful, and high difficulty.</description>
+    <!-- TODO: Set elite stats, body, health, and skills -->
+    <!-- TODO: Assign custom graphic path -->
+    <!-- TODO: Set tradeability and other properties as needed -->
+  </ThingDef>
+</ThingDefs>

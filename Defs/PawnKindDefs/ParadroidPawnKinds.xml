@@ -12,6 +12,87 @@
     <defaultFactionType>ParadroidNeuralNetwork</defaultFactionType>
   </PawnKindDef>
 
+    <!-- TEMPLATE: Utility Droid PawnKind (100–199) -->
+    <PawnKindDef ParentName="ParadroidDroidKindBase">
+      <defName>ParadroidDroid100_Utility</defName>
+      <label>100 utility droid</label>
+      <race>ParadroidDroidUtility</race>
+      <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
+      <!-- TODO: Customize for each specific utility droid as needed -->
+    </PawnKindDef>
+
+    <!-- TEMPLATE: Worker Droid PawnKind (200–299) -->
+    <PawnKindDef ParentName="ParadroidDroidKindBase">
+      <defName>ParadroidDroid200_Worker</defName>
+      <label>200 worker droid</label>
+      <race>ParadroidDroidWorker</race>
+      <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
+      <!-- TODO: Customize for each specific worker droid as needed -->
+    </PawnKindDef>
+
+    <!-- TEMPLATE: Service Droid PawnKind (300–399) -->
+    <PawnKindDef ParentName="ParadroidDroidKindBase">
+      <defName>ParadroidDroid300_Service</defName>
+      <label>300 service droid</label>
+      <race>ParadroidDroidService</race>
+      <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
+      <!-- TODO: Customize for each specific service droid as needed -->
+    </PawnKindDef>
+
+    <!-- TEMPLATE: Security Droid PawnKind (400–499) -->
+    <PawnKindDef ParentName="ParadroidDroidKindBase">
+      <defName>ParadroidDroid400_Security</defName>
+      <label>400 security droid</label>
+      <race>ParadroidDroidSecurity</race>
+      <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
+      <!-- TODO: Customize for each specific security droid as needed -->
+    </PawnKindDef>
+
+    <!-- TEMPLATE: Combat Droid PawnKind (500–599) -->
+    <PawnKindDef ParentName="ParadroidDroidKindBase">
+      <defName>ParadroidDroid500_Combat</defName>
+      <label>500 combat droid</label>
+      <race>ParadroidDroidCombat</race>
+      <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
+      <!-- TODO: Customize for each specific combat droid as needed -->
+    </PawnKindDef>
+
+    <!-- TEMPLATE: Heavy Combat Droid PawnKind (600–699) -->
+    <PawnKindDef ParentName="ParadroidDroidKindBase">
+      <defName>ParadroidDroid600_HeavyCombat</defName>
+      <label>600 heavy combat droid</label>
+      <race>ParadroidDroidHeavyCombat</race>
+      <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
+      <!-- TODO: Customize for each specific heavy combat droid as needed -->
+    </PawnKindDef>
+
+    <!-- TEMPLATE: Specialist Droid PawnKind (700–799) -->
+    <PawnKindDef ParentName="ParadroidDroidKindBase">
+      <defName>ParadroidDroid700_Specialist</defName>
+      <label>700 specialist droid</label>
+      <race>ParadroidDroidSpecialist</race>
+      <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
+      <!-- TODO: Customize for each specific specialist droid as needed -->
+    </PawnKindDef>
+
+    <!-- TEMPLATE: Elite Droid PawnKind (800–899) -->
+    <PawnKindDef ParentName="ParadroidDroidKindBase">
+      <defName>ParadroidDroid800_Elite</defName>
+      <label>800 elite droid</label>
+      <race>ParadroidDroidElite</race>
+      <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
+      <!-- TODO: Customize for each specific elite droid as needed -->
+    </PawnKindDef>
+
+    <!-- TEMPLATE: Experimental/Unique Droid PawnKind (900–999) -->
+    <PawnKindDef ParentName="ParadroidDroidKindBase">
+      <defName>ParadroidDroid900_Experimental</defName>
+      <label>900 experimental droid</label>
+      <race>ParadroidDroidExperimental</race>
+      <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
+      <!-- TODO: Customize for each specific experimental droid as needed -->
+    </PawnKindDef>
+
   <!-- 001 Neural Interface Droid (Good Faction) -->
   <PawnKindDef ParentName="ParadroidDroidKindBase">
     <defName>ParadroidDroid001_Neural</defName>

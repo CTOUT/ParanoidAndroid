@@ -1,0 +1,15 @@
+<!--
+  Heavy Combat Droid (600–699)
+  Armored, advanced weaponry.
+  Duplicate and customize for each specific droid as needed.
+-->
+<ThingDefs>
+  <ThingDef ParentName="MechanoidBase">
+    <defName>Paradroid_HeavyCombatDroid_600</defName>
+    <label>heavy combat droid</label>
+    <description>Heavily armored droid with advanced weaponry.</description>
+    <!-- TODO: Set armor, combat stats, body, health, and skills -->
+    <!-- TODO: Assign custom graphic path -->
+    <!-- TODO: Set tradeability and other properties as needed -->
+  </ThingDef>
+</ThingDefs>

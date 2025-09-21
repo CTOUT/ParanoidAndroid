@@ -1,0 +1,15 @@
+<!--
+  Influence Device (001)
+  The player's starting unit. Weak, but can hack other droids.
+  Customize stats, abilities, and graphics as needed.
+-->
+<ThingDefs>
+  <ThingDef ParentName="MechanoidBase">
+    <defName>Paradroid_InfluenceDevice_001</defName>
+    <label>influence device</label>
+    <description>The player's starting droid. Weak, but can hack other droids.</description>
+    <!-- TODO: Set body, health, skills, and special abilities -->
+    <!-- TODO: Assign custom graphic path -->
+    <!-- TODO: Set faction, tradeability, and other properties as needed -->
+  </ThingDef>
+</ThingDefs>

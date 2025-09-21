@@ -1,0 +1,15 @@
+<!--
+  Combat Droid (500–599)
+  Armed droids, more aggressive.
+  Duplicate and customize for each specific droid as needed.
+-->
+<ThingDefs>
+  <ThingDef ParentName="MechanoidBase">
+    <defName>Paradroid_CombatDroid_500</defName>
+    <label>combat droid</label>
+    <description>Armed droid designed for combat and aggression.</description>
+    <!-- TODO: Set combat stats, body, health, and skills -->
+    <!-- TODO: Assign custom graphic path -->
+    <!-- TODO: Set tradeability and other properties as needed -->
+  </ThingDef>
+</ThingDefs>
