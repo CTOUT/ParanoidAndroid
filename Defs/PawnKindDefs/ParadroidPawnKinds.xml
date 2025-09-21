@@ -6,16 +6,6 @@
     <combatPower>150</combatPower>
     <canArriveManhunter>false</canArriveManhunter>
     <canBeSapper>false</canBeSapper>
-    <lifeStages>
-      <li>
-        <bodyGraphicData>
-          <texPath>Things/Pawn/Humanlike/Apparel/ShieldBelt/ShieldBelt</texPath>
-          <graphicClass>Graphic_Multi</graphicClass>
-          <shaderType>CutoutComplex</shaderType>
-          <drawSize>1.5</drawSize>
-        </bodyGraphicData>
-      </li>
-    </lifeStages>
     <backstoryCategories>
       <li>ParadroidNeuralDroid</li>
     </backstoryCategories>
@@ -38,6 +28,16 @@
     <trader>false</trader>
     <initialResistanceRange>10~20</initialResistanceRange>
     <initialWillRange>1~3</initialWillRange>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/Militor</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>CutoutComplex</shaderType>
+          <drawSize>1.0</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
   </PawnKindDef>
 
   <!-- 139 Utility Droid (Neutral Faction) -->
@@ -56,6 +56,16 @@
     <trader>false</trader>
     <initialResistanceRange>15~25</initialResistanceRange>
     <initialWillRange>2~4</initialWillRange>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/Constructoid</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>CutoutComplex</shaderType>
+          <drawSize>1.0</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
   </PawnKindDef>
 
   <!-- 139 Utility Droid (Corrupted Version) -->
@@ -77,6 +87,16 @@
     <trader>false</trader>
     <initialResistanceRange>20~30</initialResistanceRange>
     <initialWillRange>3~5</initialWillRange>
+    <lifeStages>
+      <li>
+        <bodyGraphicData>
+          <texPath>Things/Pawn/Mechanoid/Tunneler</texPath>
+          <graphicClass>Graphic_Multi</graphicClass>
+          <shaderType>CutoutComplex</shaderType>
+          <drawSize>1.0</drawSize>
+        </bodyGraphicData>
+      </li>
+    </lifeStages>
   </PawnKindDef>
 
 </Defs>

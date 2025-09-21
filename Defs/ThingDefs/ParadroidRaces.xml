@@ -30,7 +30,7 @@
         </capacities>
         <power>8</power>
         <cooldownTime>2</cooldownTime>
-      <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+        <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
         <surpriseAttack>
           <extraMeleeDamages>
             <li>

@@ -10,10 +10,10 @@
     <pawnsPlural>neural droids</pawnsPlural>
     <categoryTag>Spacer</categoryTag>
     <listOrderPriority>40</listOrderPriority>
-    <settlementGenerationWeight>0</settlementGenerationWeight>
+    <settlementGenerationWeight>0.1</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
-    <maxCountAtGameStart>0</maxCountAtGameStart>
-    <canMakeRandomly>false</canMakeRandomly>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <canMakeRandomly>true</canMakeRandomly>
     <canSiege>false</canSiege>
     <canStageAttacks>false</canStageAttacks>
     <leaderTitle>Primary Node</leaderTitle>
@@ -37,6 +37,8 @@
         </categories>
       </li>
     </backstoryFilters>
+    <hidden>false</hidden>
+    <autoFlee>false</autoFlee>
   </FactionDef>
 
   <!-- Bad faction - Corrupted Systems -->
@@ -48,10 +50,10 @@
     <pawnsPlural>corrupted droids</pawnsPlural>
     <categoryTag>Spacer</categoryTag>
     <listOrderPriority>40</listOrderPriority>
-    <settlementGenerationWeight>0</settlementGenerationWeight>
+    <settlementGenerationWeight>0.05</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
-    <maxCountAtGameStart>0</maxCountAtGameStart>
-    <canMakeRandomly>false</canMakeRandomly>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <canMakeRandomly>true</canMakeRandomly>
     <canSiege>true</canSiege>
     <canStageAttacks>true</canStageAttacks>
     <leaderTitle>Core Virus</leaderTitle>
@@ -75,6 +77,8 @@
         </categories>
       </li>
     </backstoryFilters>
+    <hidden>false</hidden>
+    <autoFlee>false</autoFlee>
   </FactionDef>
 
   <!-- Neutral faction - Unaffected Droids -->
@@ -86,10 +90,10 @@
     <pawnsPlural>automatons</pawnsPlural>
     <categoryTag>Spacer</categoryTag>
     <listOrderPriority>40</listOrderPriority>
-    <settlementGenerationWeight>0</settlementGenerationWeight>
+    <settlementGenerationWeight>0.15</settlementGenerationWeight>
     <requiredCountAtGameStart>0</requiredCountAtGameStart>
-    <maxCountAtGameStart>0</maxCountAtGameStart>
-    <canMakeRandomly>false</canMakeRandomly>
+    <maxCountAtGameStart>1</maxCountAtGameStart>
+    <canMakeRandomly>true</canMakeRandomly>
     <canSiege>false</canSiege>
     <canStageAttacks>false</canStageAttacks>
     <leaderTitle>Central Control</leaderTitle>
@@ -113,6 +117,8 @@
         </categories>
       </li>
     </backstoryFilters>
+    <hidden>false</hidden>
+    <autoFlee>false</autoFlee>
   </FactionDef>
 
 </Defs>

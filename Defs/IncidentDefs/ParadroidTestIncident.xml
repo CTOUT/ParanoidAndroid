@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Simple Test Incident - Uses existing RimWorld incident worker -->
+  <IncidentDef>
+    <defName>TestParadroidSpawn</defName>
+    <label>Test Paradroid Spawn</label>
+    <description>A test incident to spawn Paradroid pawns.</description>
+    <category>Misc</category>
+    <targetTags>
+      <li>Map_PlayerHome</li>
+    </targetTags>
+    <minPopulation>1</minPopulation>
+    <earliestDay>0</earliestDay>
+    <minRefireDays>0</minRefireDays>
+    <baseChance>1.0</baseChance>
+    <pointsScaleable>false</pointsScaleable>
+  </IncidentDef>
+
+</Defs>
+

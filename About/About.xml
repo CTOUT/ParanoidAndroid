@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
     <name>ParanoidAndroid</name>
-    <author>Chris</author>
-    <packageId>Chris.ParanoidAndroid</packageId>
+    <author>Darkness2k</author>
+    <packageId>Darkness2k.ParanoidAndroid</packageId>
     <supportedVersions>
         <li>1.6</li>
     </supportedVersions>
