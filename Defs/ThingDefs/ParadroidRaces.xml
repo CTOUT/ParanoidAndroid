@@ -89,27 +89,47 @@
   </ThingDef>
 
   <!-- 001 Neural Interface Droid -->
-  <ThingDef ParentName="ParadroidDroidBase">
-    <defName>ParadroidDroidNeural</defName>
-    <label>001 neural interface droid</label>
-    <description>A highly sophisticated neural interface droid from the Paradroid system. Unit 001 is designed for diplomatic and communication functions, serving as a bridge between artificial and organic intelligence systems.</description>
-    <statBases>
-      <MaxHitPoints>80</MaxHitPoints>
-      <MoveSpeed>5.2</MoveSpeed>
-      <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
-      <ResearchSpeed>1.5</ResearchSpeed>
-      <MarketValue>3500</MarketValue>
-      <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
-      <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
-    </statBases>
-    <race>
-      <body>Human</body>
-      <baseHealthScale>0.8</baseHealthScale>
-      <baseBodySize>1.0</baseBodySize>
-      <baseHungerRate>0</baseHungerRate>
-      <nameGenerator>NamerParadroidDroidNeural</nameGenerator>
-    </race>
-  </ThingDef>
+    <ThingDef ParentName="ParadroidDroidBase">
+      <defName>ParadroidDroidNeural</defName>
+      <label>101 influence device</label>
+      <description>
+        Influence Device (Unit 101):
+        Type: Influence. Class: Device.
+        Sensors: aural, visual. Armament: plasma bolt. Drive: anti-grav.
+        The Influence Device is a small, anti-gravity droid equipped with aural and visual sensors and a plasma bolt weapon. It is designed for hacking and temporary control of other droids.
+      </description>
+      <statBases>
+        <MaxHitPoints>80</MaxHitPoints>
+        <MoveSpeed>5.2</MoveSpeed> <!-- anti-grav drive, slightly faster than average -->
+        <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+        <ResearchSpeed>1.5</ResearchSpeed>
+        <MarketValue>3500</MarketValue>
+        <ArmorRating_Blunt>0.15</ArmorRating_Blunt>
+        <ArmorRating_Sharp>0.15</ArmorRating_Sharp>
+      </statBases>
+      <tools>
+        <li>
+          <label>plasma bolt</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>2</cooldownTime>
+          <linkedBodyPartsGroup>LeftHand</linkedBodyPartsGroup>
+          <!-- TODO: Replace with custom ranged plasma bolt attack if desired -->
+        </li>
+      </tools>
+      <race>
+        <body>Human</body>
+        <baseHealthScale>0.8</baseHealthScale>
+        <baseBodySize>1.0</baseBodySize>
+        <baseHungerRate>0</baseHungerRate>
+        <nameGenerator>NamerParadroidDroidNeural</nameGenerator>
+        <!-- TODO: Add aural/visual sensor tags if needed for gameplay -->
+        <!-- TODO: Assign custom texPath for dome/tentacle look -->
+        <!-- TODO: Add anti-grav movement effect if possible -->
+      </race>
+    </ThingDef>
 
   <!-- 139 Utility Droid -->
   <ThingDef ParentName="ParadroidDroidBase">
