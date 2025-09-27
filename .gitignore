@@ -10,6 +10,9 @@
 bin/
 obj/
 
+# Work In Progress folders
+WIP/
+
 # Temporary files
 *.tmp
 *.temp
