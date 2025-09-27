@@ -1,90 +1,143 @@
-# RimWorld Paradroid Mod
-
-A RimWorld mod inspired by the classic 1980s game Paradroid, bringing robot hacking and control mechanics to the RimWorld universe.
+# ParanoidAndroid RimWorld Mod
 
 ## Overview
 
-This mod introduces the strategic gameplay of Paradroid into RimWorld, allowing players to hack and control robotic entities through neural interface technology.
+Foundation scaffolding for the ParanoidAndroid mod. Key components:
 
-### Features
+- Harmony bootstrap & patch audit (conflict heuristic)
+- Mod settings UI (debug logging toggle)
+- Build + packaging tasks & CI workflow
+- Dynamic game path + workshop root resolution
+- DLC detection utility (`ModDependency`)
+- Soft dependency loader (`SoftDependency`) for optional workshop mods
+- Deterministic RNG wrapper & build metadata stamping
+- Test, benchmark, and playground projects
+- Save migration example pattern
 
-- **Neural Interface Implants**: Cybernetic implants that enable robot hacking
-- **Robot Hacking System**: Take control of mechanoids and robotic enemies
-- **Paradroid Data Cores**: Rare resources needed for advanced technology
-- **Research Tree**: Progressive unlocking of robot control capabilities
-- **Strategic Gameplay**: Use controlled robots tactically in combat and work
+## Folder Structure
 
-## Gameplay Mechanics
-
-### Neural Interface
-- Requires surgical installation
-- Enables hacking attempts on robots and mechanoids
-- Success depends on various factors (skill, robot type, etc.)
-
-### Robot Control
-- Temporarily or permanently take control of hacked robots
-- Use controlled robots for combat, hauling, and other tasks
-- Risk vs. reward system for different robot types
-
-### Research Progression
-1. **Paradroid Technology** - Basic neural interface and hacking
-2. **Advanced Paradroid Systems** - Enhanced control and permanent takeover
-
-## Installation
-
-1. Subscribe to the mod on Steam Workshop (when available)
-2. Or manually install by placing the mod folder in your RimWorld/Mods directory
-3. Enable the mod in the game's mod menu
-4. Start a new game or load an existing save
-
-## Development
-
-### Project Structure
-
-```
-RimWorld-Paradroid-Mod/
-├── About/
-│   ├── About.xml           # Mod metadata
-│   └── preview_placeholder.txt
-├── Defs/
-│   ├── ThingDefs/
-│   │   └── ParadroidDevices.xml
-│   ├── ResearchProjectDefs/
-│   │   └── ParadroidResearch.xml
-│   ├── JobDefs/
-│   │   └── ParadroidJobs.xml
-│   └── WorkGiverDefs/
-├── Textures/               # Art assets (to be added)
-├── Source/                 # C# source code (to be added)
-└── README.md
+```text
+ParanoidAndroid/
+  About/              (Create About.xml here)
+  Assemblies/         (Built DLL copied here for RimWorld to load)
+  Source/             (C# source files)
+  .copilot/           (AI assistance configuration)
+  .vscode/            (Editor tasks, settings)
+  ParanoidAndroid.csproj
+  ParanoidAndroid.Playground.csproj
+  ParanoidAndroid.sln
 ```
 
-### TODO
+## Building
 
-- [ ] Create texture assets for devices and UI
-- [ ] Implement C# code for hacking mechanics
-- [ ] Add sound effects
-- [ ] Balance testing
-- [ ] Steam Workshop integration
-- [ ] Multiplayer compatibility testing
+From VS Code:
 
-### Contributing
+1. Run task: Build Mod (Debug)
+1. Run task: Publish DLL to Assemblies
+1. Launch RimWorld and enable the mod
 
-This project is in early development. Contributions welcome!
+## Adding Harmony Patches
 
-## Credits
+1. Create a file in `Source/Patches/` (create folder) named `<Type>_<Method>_Patch.cs`
+1. Add:
 
-- Inspired by the original Paradroid game by Andrew Braybrook
-- Built for RimWorld by Ludeon Studios
+```csharp
+[HarmonyPatch(typeof(TargetType), nameof(TargetType.Method))]
+internal static class TargetType_Method_Patch {
+    static void Postfix(TargetType __instance) {
+        if (!ParanoidAndroidMod.Settings.DebugLogging) return;
+        // ... logic
+    }
+}
+```
+
+1. (Optional) Call `harmony.PatchAll()` already present in bootstrap.
+
+## Settings & Debug Logging
+
+Use `ParanoidAndroidMod.Settings.DebugLogging` to guard verbose logs.
+
+## RimWorld Assemblies Reference
+
+Adjust `<HintPath>` entries in `ParanoidAndroid.csproj` if your directory layout differs. Typically you want references pointing to:
+
+```text
+RimWorldWin64_Data/Managed/Assembly-CSharp.dll
+RimWorldWin64_Data/Managed/Verse.dll
+RimWorldWin64_Data/Managed/UnityEngine.CoreModule.dll
+```
+
+## Playground Project
+
+`ParanoidAndroid.Playground` targets .NET 8 for experimenting with logic in isolation (no RimWorld runtime). Put pure algorithm / data structure tests here.
+
+## Advanced Utilities
+
+### Patch Audit & Conflict Heuristic
+
+Enable Debug Logging in settings to output a list of patched methods with owners and a section of potential conflicts (multiple owners plus transpiler or multiple prefixes). Use this as a starting point for deeper manual review.
+
+### DLC & Soft Dependencies
+
+Check DLC: `if (ModDependency.Biotech) { ... }`
+Optional workshop mod detection: `if (SoftDependency.Present("some.modid")) { /* integrate */ }`
+Optional assembly loading:
+
+```csharp
+var extAsm = SoftDependency.TryLoadModAssembly("some.modid", "1.6/Assemblies/SomeMod.dll");
+if (extAsm != null) { /* reflect types */ }
+```
+
+### Build Metadata & About Stamping
+
+Set `StampAboutXml=true` (e.g. in a Directory.Build.props override or passing `/p:StampAboutXml=true`) and include tokens `__BUILD_TIME__` and `__GIT__` inside `About/About.xml` to have them replaced during build (only when opted in).
+
+### Save Migration Pattern
+
+See `SaveMigrationExample.cs` for handling legacy fields and collapsing them into new schema on load.
+
+### Performance Benchmarks
+
+Use the Benchmarks project (`ParanoidAndroid.Benchmarks`) and run the VS Code task "Run Benchmarks" to assess micro-changes before integrating into game patches.
+
+### Deterministic RNG
+
+Use `DeterministicRng.Next()` wrappers or gate standard RNG usages to improve reproducibility when debugging.
+
+### Feature Documentation Generation
+
+Annotate classes or methods with:
+
+```csharp
+[ParanoidAndroid.Util.FeatureTag(
+  name: "Raid Scaling Core",
+  requires: "Royalty|Odyssey", // pipe = any of
+  entryPoint: "RaidScaler.Apply",
+  fallback: "Skip",
+  notes: "Balances cluster threat")]
+```
+
+Run the task: Generate Feature Table to refresh the auto-managed block in `DLC_DEPENDENCIES.md`. Only the section between markers is rewritten.
+
+### CI Validation
+
+The CI workflow enforces:
+
+1. Feature table freshness (fails if `DLC_DEPENDENCIES.md` not regenerated after adding/removing `[FeatureTag]`).
+2. Heuristic DLC guard check: if a feature tag mentions DLC keywords but the same file lacks any `ModDependency.<DLC>` usage, the build fails with a warning pointing to the file.
+
+To fix a failure
+
+- Run the VS Code task: Generate Feature Table.
+- Add guard condition(s) around DLC-specific logic, e.g. `if (!ModDependency.Biotech) return;`.
+
+## Roadmap / Next Ideas
+
+- Populate `DLC_DEPENDENCIES.md` as new gated features land
+- Extend conflict detection with patch order diffing
+- Add more granular allocation profiling hooks
+- Implement feature toggles stored in settings for experimental logic
 
 ## License
 
-[License TBD]
-
-## Changelog
-
-### Version 0.1.0 (Initial Setup)
-- Created basic mod structure
-- Added neural interface device definitions
-- Implemented research tree framework
-- Set up job definitions for robot hacking
+Add a LICENSE file if distributing.

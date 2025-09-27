@@ -1,0 +1,66 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+      - name: Verify Feature Table (pre-build)
+        run: |
+          dotnet build Tools/FeatureDocGen/FeatureDocGen.csproj -c Release
+          dotnet run --project Tools/FeatureDocGen/FeatureDocGen.csproj > feature-gen.log
+          if (git diff --quiet -- DLC_DEPENDENCIES.md); then
+            echo "Feature table up to date.";
+          else
+            echo "Feature table outdated. Please run 'Generate Feature Table' task.";
+            git --no-pager diff -- DLC_DEPENDENCIES.md
+            exit 1
+          fi
+      - name: Restore
+        run: dotnet restore ParanoidAndroid.sln
+      - name: Build (Debug)
+        run: dotnet build ParanoidAndroid.sln -c Debug --no-restore
+      - name: Test
+        run: dotnet test ParanoidAndroid.Tests.csproj -c Debug --no-build --logger trx
+      - name: DLC Guard Heuristic
+        run: |
+          echo "Scanning for FeatureTag uses lacking ModDependency guards (heuristic).";
+          $pattern = '\[FeatureTag\([^\n]*Requires?=?.*"([^"]+)"';
+          $files = Get-ChildItem -Recurse -Filter *.cs | Where-Object { $_.FullName -match 'Source' };
+          $fail = $false
+          foreach ($f in $files) {
+            $content = Get-Content $f.FullName -Raw
+            if ($content -match '\[FeatureTag' ) {
+              if ($content -match '\[FeatureTag\([^\)]*\"(?<req>[^\"]+)\"' ) {
+                $reqs = ([Regex]::Matches($content, '\[FeatureTag\([^\)]*\"(?<req>[^\"]+)\"')).Groups | Out-Null
+              }
+              # Quick scan: if a DLC keyword present (Royalty|Ideology|Biotech|Anomaly|Odyssey) ensure same file has ModDependency.
+              if ($content -match 'Royalty|Ideology|Biotech|Anomaly|Odyssey') {
+                if ($content -notmatch 'ModDependency\.Royalty|ModDependency\.Ideology|ModDependency\.Biotech|ModDependency\.Anomaly|ModDependency\.Odyssey') {
+                  echo "Potential missing guard in: $($f.FullName)"; $fail = $true
+                }
+              }
+            }
+          }
+          if ($fail) { echo 'One or more potential DLC guards missing.'; exit 1 } else { echo 'DLC guard heuristic passed.' }
+      - name: Package (Release)
+        run: |
+          pwsh ./pack.ps1 -Configuration Release
+      - name: Archive Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: mod-package
+          path: |
+            *.zip
+            Assemblies/ParanoidAndroid.dll

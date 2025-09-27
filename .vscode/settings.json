@@ -1,0 +1,31 @@
+{
+  "files.exclude": {
+    "**/bin": true,
+    "**/obj": true,
+    "**/.vs": true
+  },
+  "search.exclude": {
+    "**/bin": true,
+    "**/obj": true
+  },
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "csharp.suppressDotnetInstallWarning": true,
+"csharp.format.enable": true,
+  "dotnet.defaultSolution": "ParanoidAndroid.sln",
+  "files.associations": {
+    "About.xml": "xml",
+    "Defs/*.xml": "xml"
+  },
+  "explorer.excludeGitIgnore": true,
+  "xml.format.preserveEmptyContent": true,
+  "xml.validation.enabled": true,
+  "rimworldMod.managedAssembliesPath": "..\\..\\..\\RimWorldWin64_Data\\Managed",
+"ParanoidAndroid.debug.logPath": "%USERPROFILE%/AppData/LocalLow/Ludeon Studios/RimWorld by Ludeon Studios/Player.log",
+"dotnet.inlayHints.enableInlayHintsForParameters": true,
+"csharp.inlayHints.enableInlayHintsForTypes": true,
+"dotnet.codeLens.enableReferencesCodeLens": true,
+"dotnet.codeLens.enableTestsCodeLens": true
+}

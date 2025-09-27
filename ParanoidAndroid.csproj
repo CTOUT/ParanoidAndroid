@@ -1,0 +1,135 @@
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <AssemblyName>ParanoidAndroid</AssemblyName>
+        <RootNamespace>ParanoidAndroid</RootNamespace>
+        <OutputPath>bin/</OutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <LangVersion>latest</LangVersion>
+        <DebugType>portable</DebugType>
+        <AnalysisLevel>latest</AnalysisLevel>
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <Nullable>enable</Nullable>
+        <Deterministic>true</Deterministic>
+        <GenerateBuildInfo>true</GenerateBuildInfo>
+        <UseReferenceStubs Condition="'$(UseReferenceStubs)'==''">false</UseReferenceStubs>
+        <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+        <ForceHaveVerse Condition="'$(ForceHaveVerse)'==''">false</ForceHaveVerse>
+        <!-- Opt-in flag to stamp About/About.xml with build metadata tokens (__BUILD_TIME__,
+        __GIT__) -->
+        <StampAboutXml>false</StampAboutXml>
+        <!-- Allow environment variable RIMWORLD_DIR to override root automatically -->
+        <RimWorldRootDir Condition="'$(RimWorldRootDir)'=='' and '$(RIMWORLD_DIR)'!=''">
+            $(RIMWORLD_DIR)\</RimWorldRootDir>
+        <!-- Default: two levels up from Mods/<ThisMod> -->
+        <RimWorldRootDir Condition="'$(RimWorldRootDir)'==''">$(MSBuildThisFileDirectory)..\..\</RimWorldRootDir>
+        <RimWorldManagedDir Condition="'$(RimWorldManagedDir)'==''">
+            $(RimWorldRootDir)RimWorldWin64_Data\Managed</RimWorldManagedDir>
+        <RimWorldVersionFile>$(RimWorldRootDir)Version.txt</RimWorldVersionFile>
+        <!-- Steam workshop root (override via env: STEAM_RIMWORLD_WORKSHOP) -->
+        <WorkshopRoot Condition="'$(WorkshopRoot)'=='' and '$(STEAM_RIMWORLD_WORKSHOP)'!=''">
+            $(STEAM_RIMWORLD_WORKSHOP)</WorkshopRoot>
+        <!-- Default typical Steam path example (adjust manually if needed) -->
+        <WorkshopRoot Condition="'$(WorkshopRoot)'==''">
+            D:\Games\SteamLibrary\steamapps\workshop\content\294100\</WorkshopRoot>
+        <!-- Optional: opt-in to using NuGet Harmony for analysis/fallback. Default off for offline
+    friendliness. -->
+        <UseHarmonyNuGet Condition="'$(UseHarmonyNuGet)'==''">false</UseHarmonyNuGet>
+    </PropertyGroup>
+    <!-- Auto-enable stub mode if game core assembly is missing and caller didn't explicitly choose -->
+    <PropertyGroup
+        Condition="'$(UseReferenceStubs)'=='false' and !Exists('$(RimWorldManagedDir)\Assembly-CSharp.dll')">
+        <UseReferenceStubs>true</UseReferenceStubs>
+    </PropertyGroup>
+    <!-- Enable stub mode only if the core game assembly is missing. (Verse.dll may be merged into
+Assembly-CSharp in newer builds) -->
+    <PropertyGroup Condition="!Exists('$(RimWorldManagedDir)\Assembly-CSharp.dll')">
+        <UseReferenceStubs>true</UseReferenceStubs>
+        <DefineConstants>$(DefineConstants);STUB_VERSE;STUB_HARMONY</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(UseReferenceStubs)'=='true'">
+        <DefineConstants>$(DefineConstants);REFERENCE_STUBS</DefineConstants>
+    </PropertyGroup>
+    <!-- Real game build (no stubs) - only flag HAVE_VERSE when Verse.dll present OR caller forces
+    it -->
+    <PropertyGroup
+        Condition="'$(UseReferenceStubs)'!='true' and Exists('$(RimWorldManagedDir)\Assembly-CSharp.dll') and (Exists('$(RimWorldManagedDir)\Verse.dll') or '$(ForceHaveVerse)'=='true')">
+        <DefineConstants>$(DefineConstants);HAVE_VERSE</DefineConstants>
+    </PropertyGroup>
+
+    <!-- Provide STUB_VERSE if Verse.dll missing (even if Assembly-CSharp present) -->
+    <PropertyGroup
+        Condition="'$(UseReferenceStubs)'!='true' and Exists('$(RimWorldManagedDir)\Assembly-CSharp.dll') and !Exists('$(RimWorldManagedDir)\Verse.dll')">
+        <DefineConstants>$(DefineConstants);STUB_VERSE</DefineConstants>
+    </PropertyGroup>
+
+    <!-- Provide STUB_HARMONY when Harmony assembly absent and NuGet fallback not requested -->
+    <PropertyGroup
+        Condition="'$(UseReferenceStubs)'!='true' and !Exists('$(RimWorldManagedDir)\0Harmony.dll') and '$(UseHarmonyNuGet)'!='true' and !Exists('Libs\0Harmony.dll')">
+        <DefineConstants>$(DefineConstants);STUB_HARMONY</DefineConstants>
+    </PropertyGroup>
+    <ItemGroup>
+        <!-- Game + Unity assemblies (use game copies) -->
+        <Reference Include="Assembly-CSharp"
+            Condition="'$(UseReferenceStubs)'!='true' and Exists('$(RimWorldManagedDir)\Assembly-CSharp.dll')">
+            <HintPath>$(RimWorldManagedDir)\Assembly-CSharp.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+        <!-- Verse.dll may be absent in newer builds; reference it only if it exists -->
+        <Reference Include="Verse"
+            Condition="'$(UseReferenceStubs)'!='true' and Exists('$(RimWorldManagedDir)\Verse.dll')">
+            <HintPath>$(RimWorldManagedDir)\Verse.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule" Condition="'$(UseReferenceStubs)'!='true'">
+            <HintPath>$(RimWorldManagedDir)\UnityEngine.CoreModule.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestModule"
+            Condition="'$(UseReferenceStubs)'!='true'">
+            <HintPath>$(RimWorldManagedDir)\UnityEngine.UnityWebRequestModule.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+        <Reference Include="UnityEngine.IMGUIModule" Condition="'$(UseReferenceStubs)'!='true'">
+            <HintPath>$(RimWorldManagedDir)\UnityEngine.IMGUIModule.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+        <!-- Harmony from game's managed folder (0Harmony.dll) -->
+        <Reference Include="0Harmony"
+            Condition="'$(UseReferenceStubs)'!='true' and Exists('$(RimWorldManagedDir)\0Harmony.dll')">
+            <HintPath>$(RimWorldManagedDir)\0Harmony.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+        <!-- Local Libs fallback (optional) -->
+        <Reference Include="0Harmony"
+            Condition="'$(UseReferenceStubs)'!='true' and !Exists('$(RimWorldManagedDir)\0Harmony.dll') and Exists('Libs\0Harmony.dll')">
+            <HintPath>Libs\0Harmony.dll</HintPath>
+            <Private>false</Private>
+        </Reference>
+    </ItemGroup>
+    <!-- Optional NuGet Harmony fallback: only if explicitly enabled -->
+    <ItemGroup
+        Condition="'$(UseHarmonyNuGet)'=='true' and ( '$(UseReferenceStubs)'=='true' or !Exists('$(RimWorldManagedDir)\0Harmony.dll') )">
+        <PackageReference Include="HarmonyLib" Version="2.4.1" GeneratePathProperty="true">
+            <PrivateAssets>all</PrivateAssets>
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Source/**/*.cs" />
+        <None Include="About/About.xml" />
+    </ItemGroup>
+
+    <!-- If we are targeting real game build but Harmony DLL is absent, use NuGet HarmonyLib for
+compile-time only (not shipped) -->
+    <ItemGroup
+        Condition="'$(UseReferenceStubs)'!='true' and !Exists('$(RimWorldManagedDir)\0Harmony.dll') and !Exists('Libs\0Harmony.dll')">
+        <PackageReference Include="HarmonyLib" Version="2.4.1">
+            <PrivateAssets>all</PrivateAssets>
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+    </ItemGroup>
+    <!-- End of project definition -->
+</Project>

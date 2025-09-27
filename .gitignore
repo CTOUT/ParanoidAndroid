@@ -1,39 +1,28 @@
-# RimWorld Mod .gitignore
-
-# Visual Studio / MonoDevelop files
-*.user
-*.suo
-*.sln.cache
-*.pidb
-*.userprefs
-.vs/
+# Build artifacts
 bin/
 obj/
+*.user
+*.suo
+*.userprefs
 
-# Temporary files
+# VS / JetBrains
+.vs/
+.idea/
+*.csproj.user
+
+# Logs / crash dumps
+Player.log
+*.stacktrace
+
+# Packaged output
+*.zip
+
+# Generated Assemblies folder content (keep DLL tracked if desired later)
+Assemblies/*.pdb
+
+# Copilot / AI caches (if any appear)
+.copilot-cache/
+
+# Temporary
 *.tmp
-*.temp
-*~
-
-# OS generated files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-desktop.ini
-
-# RimWorld specific
-*.orig
-
-# Asset creation files (keep final assets, ignore working files)
-*.psd
-*.ai
-*.sketch
-*.xcf
-
-# Backup files
-*.bak
-*.backup
+~$*

@@ -1,0 +1,81 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build Mod (Debug)",
+      "type": "shell",
+      "command": "dotnet",
+      "args": ["build", "ParanoidAndroid.sln", "-c", "Debug"],
+      "group": "build",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Build Mod (Release)",
+      "type": "shell",
+      "command": "dotnet",
+      "args": ["build", "ParanoidAndroid.sln", "-c", "Release"],
+      "group": "build",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Publish DLL to Assemblies",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-Command",
+        "${env:DOTNET_ROOT}; $dll=Get-ChildItem -Recurse -Filter ParanoidAndroid.dll | Where-Object { $_.FullName -match 'ParanoidAndroid\\bin' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1; if(-not (Test-Path 'Assemblies')) { New-Item -ItemType Directory -Path 'Assemblies' | Out-Null }; Copy-Item $dll.FullName -Destination 'Assemblies/ParanoidAndroid.dll' -Force; Write-Host 'Copied: ' $dll.FullName ' -> Assemblies/ParanoidAndroid.dll'"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Tests",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "test",
+        "ParanoidAndroid.Tests.csproj",
+        "-c",
+        "Debug",
+        "--no-build"
+      ],
+      "group": "test",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "Package Mod",
+      "type": "shell",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "pack.ps1",
+        "-Configuration",
+        "Release"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Benchmarks",
+      "type": "shell",
+      "command": "dotnet",
+      "args": [
+        "run",
+        "-c",
+        "Release",
+        "--project",
+        "ParanoidAndroid.Benchmarks.csproj"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "Generate Feature Table",
+      "type": "shell",
+      "command": "dotnet",
+      "args": ["run", "--project", "Tools/FeatureDocGen/FeatureDocGen.csproj"],
+      "problemMatcher": []
+    }
+  ]
+}

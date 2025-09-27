@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParanoidAndroid", "ParanoidAndroid.csproj", "{6F8B33F9-7C60-46C6-8E55-D0B2701BC5E0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParanoidAndroid.Playground", "ParanoidAndroid.Playground.csproj", "{D7D75B0B-64FC-4D40-B5F6-A5E842C6F34B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParanoidAndroid.Tests", "ParanoidAndroid.Tests.csproj", "{A0CF2F93-0F2F-4A8E-B8A7-6D8B5D94C9B0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParanoidAndroid.Benchmarks", "ParanoidAndroid.Benchmarks.csproj", "{4C6B0D8B-0A18-4A2E-91D5-3B5F62F01D77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureDocGen", "Tools\FeatureDocGen\FeatureDocGen.csproj", "{7A3FDF1E-8D04-42D9-A1F6-6DDF5649D0B4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6F8B33F9-7C60-46C6-8E55-D0B2701BC5E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F8B33F9-7C60-46C6-8E55-D0B2701BC5E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F8B33F9-7C60-46C6-8E55-D0B2701BC5E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F8B33F9-7C60-46C6-8E55-D0B2701BC5E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D7D75B0B-64FC-4D40-B5F6-A5E842C6F34B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D7D75B0B-64FC-4D40-B5F6-A5E842C6F34B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D7D75B0B-64FC-4D40-B5F6-A5E842C6F34B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D7D75B0B-64FC-4D40-B5F6-A5E842C6F34B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0CF2F93-0F2F-4A8E-B8A7-6D8B5D94C9B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0CF2F93-0F2F-4A8E-B8A7-6D8B5D94C9B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0CF2F93-0F2F-4A8E-B8A7-6D8B5D94C9B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0CF2F93-0F2F-4A8E-B8A7-6D8B5D94C9B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C6B0D8B-0A18-4A2E-91D5-3B5F62F01D77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C6B0D8B-0A18-4A2E-91D5-3B5F62F01D77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C6B0D8B-0A18-4A2E-91D5-3B5F62F01D77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C6B0D8B-0A18-4A2E-91D5-3B5F62F01D77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A3FDF1E-8D04-42D9-A1F6-6DDF5649D0B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A3FDF1E-8D04-42D9-A1F6-6DDF5649D0B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A3FDF1E-8D04-42D9-A1F6-6DDF5649D0B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A3FDF1E-8D04-42D9-A1F6-6DDF5649D0B4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
