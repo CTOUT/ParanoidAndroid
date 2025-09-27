@@ -15,9 +15,6 @@ obj/
 *.temp
 *~
 
-# Work in Progress files
-/WIP/
-
 # OS generated files
 .DS_Store
 .DS_Store?

@@ -1,0 +1,44 @@
+<!--
+  Example RimWorld ThingDef for a Paradroid droid.
+  Replace placeholder values as you define your droids.
+  Save this file as a template for new droid types.
+-->
+<Defs>
+  <ThingDef ParentName="MechanoidBase">
+    <defName>Paradroid_UtilityDroid_100</defName>
+    <label>utility droid 100</label>
+    <description>A basic maintenance droid, inspired by Paradroid's 100-series.</description>
+    <race>
+      <body>Mechanoid</body>
+      <baseHealthScale>1.0</baseHealthScale>
+      <baseHungerRate>0</baseHungerRate>
+      <isFlesh>false</isFlesh>
+      <intelligence>ToolUser</intelligence>
+      <manhunterOnDamageChance>0.0</manhunterOnDamageChance>
+    </race>
+    <statBases>
+      <MoveSpeed>3.5</MoveSpeed>
+      <MarketValue>500</MarketValue>
+      <ArmorRating_Sharp>0.2</ArmorRating_Sharp>
+      <ArmorRating_Blunt>0.1</ArmorRating_Blunt>
+      <ArmorRating_Heat>0.1</ArmorRating_Heat>
+    </statBases>
+    <tools>
+      <li>
+        <label>basic manipulator</label>
+        <capacities>
+          <li>Manipulation</li>
+        </capacities>
+        <power>5</power>
+        <cooldownTime>2</cooldownTime>
+      </li>
+    </tools>
+    <comps>
+      <li Class="CompProperties_Explodable">
+        <explosionRadius>2.9</explosionRadius>
+        <explosionDamage>10</explosionDamage>
+      </li>
+    </comps>
+    <!-- Add more properties as needed -->
+  </ThingDef>
+</Defs>

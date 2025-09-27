@@ -1,0 +1,15 @@
+<!--
+  Security Droid (400–499)
+  Basic guards, patrol droids.
+  Duplicate and customize for each specific droid as needed.
+-->
+<ThingDefs>
+  <ThingDef ParentName="MechanoidBase">
+    <defName>Paradroid_SecurityDroid_400</defName>
+    <label>security droid</label>
+    <description>Acts as a basic guard and patrol unit.</description>
+    <!-- TODO: Set combat stats, body, health, and skills -->
+    <!-- TODO: Assign custom graphic path -->
+    <!-- TODO: Set tradeability and other properties as needed -->
+  </ThingDef>
+</ThingDefs>

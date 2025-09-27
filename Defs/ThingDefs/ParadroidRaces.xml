@@ -147,8 +147,7 @@
       <baseHealthScale>1.2</baseHealthScale>
       <baseBodySize>1.0</baseBodySize>
       <baseHungerRate>0</baseHungerRate>
-      <fleshType>ParadroidArtificial</fleshType>
-      <nameGenerator>NamerParadroidDroidUtility</nameGenerator>
+  <nameGenerator>NamerParadroidDroidUtility</nameGenerator>
     </race>
   </ThingDef>
 
@@ -167,7 +166,6 @@
       <baseHealthScale>1.1</baseHealthScale>
       <baseBodySize>1.0</baseBodySize>
       <baseHungerRate>0</baseHungerRate>
-      <fleshType>ParadroidArtificial</fleshType>
   <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidWorker) -->
     </race>
   </ThingDef>
@@ -187,7 +185,6 @@
       <baseHealthScale>1.05</baseHealthScale>
       <baseBodySize>1.0</baseBodySize>
       <baseHungerRate>0</baseHungerRate>
-      <fleshType>ParadroidArtificial</fleshType>
   <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidService) -->
     </race>
   </ThingDef>
@@ -208,7 +205,6 @@
       <baseHealthScale>1.2</baseHealthScale>
       <baseBodySize>1.0</baseBodySize>
       <baseHungerRate>0</baseHungerRate>
-      <fleshType>ParadroidArtificial</fleshType>
   <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidSecurity) -->
     </race>
   </ThingDef>
@@ -229,7 +225,6 @@
       <baseHealthScale>1.25</baseHealthScale>
       <baseBodySize>1.05</baseBodySize>
       <baseHungerRate>0</baseHungerRate>
-      <fleshType>ParadroidArtificial</fleshType>
   <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidCombat) -->
     </race>
   </ThingDef>
@@ -250,7 +245,6 @@
       <baseHealthScale>1.5</baseHealthScale>
       <baseBodySize>1.2</baseBodySize>
       <baseHungerRate>0</baseHungerRate>
-      <fleshType>ParadroidArtificial</fleshType>
   <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidHeavyCombat) -->
     </race>
   </ThingDef>
@@ -270,7 +264,6 @@
       <baseHealthScale>1.3</baseHealthScale>
       <baseBodySize>1.05</baseBodySize>
       <baseHungerRate>0</baseHungerRate>
-      <fleshType>ParadroidArtificial</fleshType>
   <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidSpecialist) -->
     </race>
   </ThingDef>
@@ -292,7 +285,6 @@
       <baseHealthScale>1.4</baseHealthScale>
       <baseBodySize>1.1</baseBodySize>
       <baseHungerRate>0</baseHungerRate>
-      <fleshType>ParadroidArtificial</fleshType>
   <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidElite) -->
     </race>
   </ThingDef>
@@ -314,7 +306,6 @@
       <baseHealthScale>1.45</baseHealthScale>
       <baseBodySize>1.1</baseBodySize>
       <baseHungerRate>0</baseHungerRate>
-      <fleshType>ParadroidArtificial</fleshType>
   <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidExperimental) -->
     </race>
   </ThingDef>

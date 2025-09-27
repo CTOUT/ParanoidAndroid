@@ -142,7 +142,7 @@
       <backstoryCategories>
         <li>ParadroidSecurityDroid</li>
       </backstoryCategories>
-  <defaultFactionType>CorruptedSystems</defaultFactionType> <!-- corrected from HostileAutomatons (nonexistent) -->
+      <defaultFactionType>HostileAutomatons</defaultFactionType>
       <apparelMoney>0</apparelMoney>
       <weaponMoney>0</weaponMoney>
       <weaponTags>
