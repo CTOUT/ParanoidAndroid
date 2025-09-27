@@ -150,7 +150,166 @@
       <baseHealthScale>1.2</baseHealthScale>
       <baseBodySize>1.0</baseBodySize>
       <baseHungerRate>0</baseHungerRate>
-      <nameGenerator>NamerParadroidDroidUtility</nameGenerator>
+  <nameGenerator>NamerParadroidDroidUtility</nameGenerator>
+    </race>
+  </ThingDef>
+
+  <!-- Worker Droid Variant (200 series) -->
+  <ThingDef ParentName="ParadroidDroidBase">
+    <defName>ParadroidDroidWorker</defName>
+    <label>worker droid</label>
+    <description>General purpose labor and engineering droid platform (200-series base).</description>
+    <statBases>
+      <MoveSpeed>4.2</MoveSpeed>
+      <WorkSpeedGlobal>1.05</WorkSpeedGlobal>
+      <MarketValue>2600</MarketValue>
+    </statBases>
+    <race>
+      <body>Human</body>
+      <baseHealthScale>1.1</baseHealthScale>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHungerRate>0</baseHungerRate>
+  <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidWorker) -->
+    </race>
+  </ThingDef>
+
+  <!-- Service Droid Variant (300 series) -->
+  <ThingDef ParentName="ParadroidDroidBase">
+    <defName>ParadroidDroidService</defName>
+    <label>service droid</label>
+    <description>Medical, repair and logistics support droid platform (300-series base).</description>
+    <statBases>
+      <MoveSpeed>4.0</MoveSpeed>
+      <WorkSpeedGlobal>1.1</WorkSpeedGlobal>
+      <MarketValue>2700</MarketValue>
+    </statBases>
+    <race>
+      <body>Human</body>
+      <baseHealthScale>1.05</baseHealthScale>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHungerRate>0</baseHungerRate>
+  <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidService) -->
+    </race>
+  </ThingDef>
+
+  <!-- Security Droid Variant (400 series) -->
+  <ThingDef ParentName="ParadroidDroidBase">
+    <defName>ParadroidDroidSecurity</defName>
+    <label>security droid</label>
+    <description>Security and patrol droid platform (400-series base).</description>
+    <statBases>
+      <MoveSpeed>4.3</MoveSpeed>
+      <ArmorRating_Blunt>0.3</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.3</ArmorRating_Sharp>
+      <MarketValue>3000</MarketValue>
+    </statBases>
+    <race>
+      <body>Human</body>
+      <baseHealthScale>1.2</baseHealthScale>
+      <baseBodySize>1.0</baseBodySize>
+      <baseHungerRate>0</baseHungerRate>
+  <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidSecurity) -->
+    </race>
+  </ThingDef>
+
+  <!-- Combat Droid Variant (500 series) -->
+  <ThingDef ParentName="ParadroidDroidBase">
+    <defName>ParadroidDroidCombat</defName>
+    <label>combat droid</label>
+    <description>Standard combat droid platform (500-series base).</description>
+    <statBases>
+      <MoveSpeed>4.4</MoveSpeed>
+      <ArmorRating_Blunt>0.35</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.35</ArmorRating_Sharp>
+      <MarketValue>3200</MarketValue>
+    </statBases>
+    <race>
+      <body>Human</body>
+      <baseHealthScale>1.25</baseHealthScale>
+      <baseBodySize>1.05</baseBodySize>
+      <baseHungerRate>0</baseHungerRate>
+  <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidCombat) -->
+    </race>
+  </ThingDef>
+
+  <!-- Heavy Combat Droid Variant (600 series) -->
+  <ThingDef ParentName="ParadroidDroidBase">
+    <defName>ParadroidDroidHeavyCombat</defName>
+    <label>heavy combat droid</label>
+    <description>Heavily armored combat droid platform (600-series base).</description>
+    <statBases>
+      <MoveSpeed>3.8</MoveSpeed>
+      <ArmorRating_Blunt>0.45</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.45</ArmorRating_Sharp>
+      <MarketValue>3800</MarketValue>
+    </statBases>
+    <race>
+      <body>Human</body>
+      <baseHealthScale>1.5</baseHealthScale>
+      <baseBodySize>1.2</baseBodySize>
+      <baseHungerRate>0</baseHungerRate>
+  <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidHeavyCombat) -->
+    </race>
+  </ThingDef>
+
+  <!-- Specialist Droid Variant (700 series) -->
+  <ThingDef ParentName="ParadroidDroidBase">
+    <defName>ParadroidDroidSpecialist</defName>
+    <label>specialist droid</label>
+    <description>Special function droid platform (700-series base) with unique capabilities.</description>
+    <statBases>
+      <MoveSpeed>4.5</MoveSpeed>
+      <WorkSpeedGlobal>1.2</WorkSpeedGlobal>
+      <MarketValue>4000</MarketValue>
+    </statBases>
+    <race>
+      <body>Human</body>
+      <baseHealthScale>1.3</baseHealthScale>
+      <baseBodySize>1.05</baseBodySize>
+      <baseHungerRate>0</baseHungerRate>
+  <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidSpecialist) -->
+    </race>
+  </ThingDef>
+
+  <!-- Elite Droid Variant (800 series) -->
+  <ThingDef ParentName="ParadroidDroidBase">
+    <defName>ParadroidDroidElite</defName>
+    <label>elite droid</label>
+    <description>Elite high-performance droid platform (800-series base).</description>
+    <statBases>
+      <MoveSpeed>4.6</MoveSpeed>
+      <ArmorRating_Blunt>0.5</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.5</ArmorRating_Sharp>
+      <WorkSpeedGlobal>1.25</WorkSpeedGlobal>
+      <MarketValue>4500</MarketValue>
+    </statBases>
+    <race>
+      <body>Human</body>
+      <baseHealthScale>1.4</baseHealthScale>
+      <baseBodySize>1.1</baseBodySize>
+      <baseHungerRate>0</baseHungerRate>
+  <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidElite) -->
+    </race>
+  </ThingDef>
+
+  <!-- Experimental Droid Variant (900 series) -->
+  <ThingDef ParentName="ParadroidDroidBase">
+    <defName>ParadroidDroidExperimental</defName>
+    <label>experimental droid</label>
+    <description>Experimental or prototype droid platform (900-series base) featuring advanced or unstable tech.</description>
+    <statBases>
+      <MoveSpeed>4.7</MoveSpeed>
+      <ArmorRating_Blunt>0.55</ArmorRating_Blunt>
+      <ArmorRating_Sharp>0.55</ArmorRating_Sharp>
+      <WorkSpeedGlobal>1.3</WorkSpeedGlobal>
+      <MarketValue>5000</MarketValue>
+    </statBases>
+    <race>
+      <body>Human</body>
+      <baseHealthScale>1.45</baseHealthScale>
+      <baseBodySize>1.1</baseBodySize>
+      <baseHungerRate>0</baseHungerRate>
+  <!-- nameGenerator removed until RulePack added (was NamerParadroidDroidExperimental) -->
     </race>
   </ThingDef>
 

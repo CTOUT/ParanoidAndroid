@@ -114,3 +114,39 @@ Instead of a complex mini-game, use RimWorld's existing systems:
 - [ ] Multiplayer compatibility
 - [ ] Performance impact assessment
 - [ ] Mod compatibility testing
+
+## Implementation Notes (Race/Pawn Consolidation)
+
+To avoid duplicate or conflicting definitions, Paradroid droids now follow a single-source pattern:
+
+- Race (ThingDef with `<race>` block) is defined once in `ParadroidRaces.xml` (e.g., `ParadroidDroidNeural`, `ParadroidDroidUtility`, etc.).
+- PawnKindDefs reference those race defNames directly for spawning, faction integration, and storyteller usage.
+- Redundant standalone ThingDefs that attempted to redefine the same unit (e.g., the former `Paradroid_InfluenceDevice_001.xml`) have been removed to prevent duplicate pawn categories and cross-ref noise.
+
+When adding a new droid:
+1. If it fits an existing series (utility/worker/service/security/combat/etc.), extend behavior via PawnKind only (adjust `combatPower`, apparel, weapon tags, lifeStage graphics).
+2. Only create a new race ThingDef if the chassis genuinely differs in body, body size, movement mode, or fundamental race properties.
+3. Keep graphics either on the race definition (shared look) or override per PawnKind with `lifeStages -> bodyGraphicData` if needed.
+4. Avoid creating parallel template ThingDefs unless they are strictly abstract (`Abstract="true"`) helpers.
+
+Benefits:
+- Cleaner load order, fewer cross-reference errors.
+- Easier future C# integration for hacking (single place for comps if needed).
+- Reduced maintenance when balancing stats across a series.
+
+Future: Once hacking mechanics are implemented, consider adding a custom comp only to base race(s) instead of duplicating across many concrete ThingDefs.
+
+### 2025-09-27 Cleanup Pass
+
+Actions performed:
+- Removed all placeholder per-series ThingDef files (`Paradroid_UtilityDroid_100.xml`, `Paradroid_WorkerDroid_200.xml`, etc.) that merely wrapped existing race definitions. These added no value and produced parent resolution errors when race def load order shifted.
+- Removed obsolete `Paradroid_InfluenceDevice_001.xml` (superseded by `ParadroidDroidNeural` race + PawnKind `ParadroidDroid101_Influence`).
+- Fixed invalid faction reference `HostileAutomatons` -> `CorruptedSystems` in PawnKind `ParadroidDroid476_Maintenance`.
+- Pruned `nameGenerator` references from race defs where no corresponding `RulePackDef` yet exists (kept only Neural + Utility which have rule packs). This eliminates cross-ref errors while preserving future expansion hooks.
+- Left a comment marker at each removed generator to make it easy to reinstate once rule packs are authored.
+
+Next naming step options:
+1. Add minimal RulePackDefs for remaining chassis (Worker, Service, Security, Combat, HeavyCombat, Specialist, Elite, Experimental) and restore the `nameGenerator` tags.
+2. Defer naming variety and keep relying on default mechanoid naming until gameplay systems mature.
+
+Recommended immediate next step: Validate a clean game load (no red errors). If successful, proceed to drafting the C# hacking comp scaffolding.
