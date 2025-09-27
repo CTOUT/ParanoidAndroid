@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Custom flesh type for Paradroid units to separate from standard Mechanoids -->
+  <FleshTypeDef>
+    <defName>ParadroidArtificial</defName>
+    <label>paradroid construct</label>
+    <description>A synthetic paradroid chassis distinct from typical mechanoids.</description>
+    <isFlesh>false</isFlesh>
+    <needRest>false</needRest>
+    <aiDangerous>true</aiDangerous>
+  </FleshTypeDef>
+</Defs>

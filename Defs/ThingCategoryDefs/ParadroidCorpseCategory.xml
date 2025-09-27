@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Optional separate corpse category for Paradroid units -->
+  <ThingCategoryDef>
+    <defName>CategoryParadroidCorpses</defName>
+    <label>paradroid corpses</label>
+    <parent>Corpses</parent>
+    <iconPath>Things/Item/Resource/Steel/Steel</iconPath>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+  </ThingCategoryDef>
+</Defs>

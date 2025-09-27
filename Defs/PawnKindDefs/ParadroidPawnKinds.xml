@@ -17,6 +17,16 @@
       <defName>ParadroidDroid100_Utility</defName>
       <label>100 utility droid</label>
       <race>ParadroidDroidUtility</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Constructoid</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>1.0</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
       <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
       <!-- TODO: Customize for each specific utility droid as needed -->
     </PawnKindDef>
@@ -26,6 +36,16 @@
       <defName>ParadroidDroid200_Worker</defName>
       <label>200 worker droid</label>
       <race>ParadroidDroidWorker</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Constructoid</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>1.0</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
       <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
       <!-- TODO: Customize for each specific worker droid as needed -->
     </PawnKindDef>
@@ -35,6 +55,16 @@
       <defName>ParadroidDroid300_Service</defName>
       <label>300 service droid</label>
       <race>ParadroidDroidService</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Constructoid</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>1.0</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
       <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
       <!-- TODO: Customize for each specific service droid as needed -->
     </PawnKindDef>
@@ -88,6 +118,16 @@
       <defName>ParadroidDroid400_Security</defName>
       <label>400 security droid</label>
       <race>ParadroidDroidSecurity</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Militor</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>1.0</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
       <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
       <!-- TODO: Customize for each specific security droid as needed -->
     </PawnKindDef>
@@ -143,6 +183,16 @@
       <defName>ParadroidDroid500_Combat</defName>
       <label>500 combat droid</label>
       <race>ParadroidDroidCombat</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Pikeman</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>1.0</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
       <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
       <!-- TODO: Customize for each specific combat droid as needed -->
     </PawnKindDef>
@@ -152,6 +202,16 @@
       <defName>ParadroidDroid600_HeavyCombat</defName>
       <label>600 heavy combat droid</label>
       <race>ParadroidDroidHeavyCombat</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Centipede</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>1.2</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
       <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
       <!-- TODO: Customize for each specific heavy combat droid as needed -->
     </PawnKindDef>
@@ -161,6 +221,16 @@
       <defName>ParadroidDroid700_Specialist</defName>
       <label>700 specialist droid</label>
       <race>ParadroidDroidSpecialist</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Scyther</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>1.05</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
       <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
       <!-- TODO: Customize for each specific specialist droid as needed -->
     </PawnKindDef>
@@ -170,6 +240,16 @@
       <defName>ParadroidDroid800_Elite</defName>
       <label>800 elite droid</label>
       <race>ParadroidDroidElite</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Lancer</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
       <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
       <!-- TODO: Customize for each specific elite droid as needed -->
     </PawnKindDef>
@@ -179,6 +259,16 @@
       <defName>ParadroidDroid900_Experimental</defName>
       <label>900 experimental droid</label>
       <race>ParadroidDroidExperimental</race>
+      <lifeStages>
+        <li>
+          <bodyGraphicData>
+            <texPath>Things/Pawn/Mechanoid/Tesseron</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <shaderType>CutoutComplex</shaderType>
+            <drawSize>1.1</drawSize>
+          </bodyGraphicData>
+        </li>
+      </lifeStages>
       <!-- TODO: Set combatPower, backstoryCategories, defaultFactionType, apparel, weapons, etc. -->
       <!-- TODO: Customize for each specific experimental droid as needed -->
     </PawnKindDef>
@@ -202,7 +292,7 @@
     <lifeStages>
       <li>
         <bodyGraphicData>
-          <texPath>Things/Pawn/Mechanoid/Militor</texPath> <!-- TODO: Replace with custom Influence Device art -->
+          <texPath>Things/Pawn/Mechanoid/Paradroid/InfluenceDevice/InfluenceDevice</texPath> <!-- TODO: Replace with custom Influence Device art -->
           <graphicClass>Graphic_Multi</graphicClass>
           <shaderType>CutoutComplex</shaderType>
           <drawSize>1.0</drawSize>
